@@ -1,27 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include "bank.h"  //Include the header file for external references
 
-// Define the structure for a bank account
-struct Account {
-    int accountNumber;
-    char name[100];
-    float balance;
-};
-
-// Function prototypes
-void createAccount();
-void deposit();
-void withdraw();
-void checkBalance();
-void viewTransactions();
-void deleteAccount();
-void saveTransaction(int accountNumber, float amount, char *type);
-
-int main() {
-    int choice;
-
-    while(1) {
+int main()
+{
+   int choice;
+    while(1)
+    {
         printf("\nIndian Banking System\n");
         printf("1. Create Account\n");
         printf("2. Deposit Funds\n");
@@ -31,9 +16,10 @@ int main() {
         printf("6. Delete Account\n");
         printf("7. Exit\n");
         printf("Enter your choice: ");
-        scanf("%d", &choice);
+        scanf("%d",&choice);
 
-        switch (choice) {
+        switch (choice)
+         {
             case 1:
                 createAccount();
                 break;
@@ -46,17 +32,19 @@ int main() {
             case 4:
                 checkBalance();
                 break;
-            case 5:
-                viewTransactions();
-                break;
-            case 6:
-                deleteAccount();
-                break;
+            //case 5:
+            //viewTransactions(); (to be implemented)
+            //break;
+            //case 6:
+            //deleteAccount(); (to be implemented)
+            //break;
             case 7:
                 exit(0);
             default:
                 printf("Invalid choice! Please try again.\n");
+                break;
         }
     }
 
     return 0;
+}
